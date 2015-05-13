@@ -1,0 +1,12 @@
+.sobazaar-iframe-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 0;
+    padding-bottom: 120%;
+}
+.sobazaar-iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
