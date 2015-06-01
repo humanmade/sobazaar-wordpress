@@ -4,11 +4,19 @@ Plugin Name: SOBAZAAR
 Plugin URI: http://wordpress.org/extend/plugins/sobazaar/
 Version: 1.0
 Author: Alice Cyan Carlsson
-Description: Show off your fashion boards
+Description: Show off your fashion boards.
+Domain Path: /languages
+Text Domain: sobazaar-wordpress
 */
 
 /* Some configuration */
 define('SOBAZAAR_EMBED_SRV', 'http://alice.sobazaar.com/'); // Test server - Do not use in production!
+
+// Load plugin textdomain.
+function sobazaar_load_textdomain() {
+	load_plugin_textdomain( 'sobazaar-wordpress', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
+}
+add_action( 'plugins_loaded', 'sobazaar_load_textdomain' );
 
 /*
  *  Part one of this plugin is the meta box shown in admin when editing a post
@@ -36,7 +44,7 @@ add_action( 'load-post-new.php', 'sobazaar_post_meta_boxes_setup' );
 function sobazaar_add_post_meta_boxes() {
 	add_meta_box(
 		'sobazaar-board', 				// Unique ID
-		esc_html__( 'SOBAZAAR', '' ),	// Title
+		esc_html__( 'SOBAZAAR', 'sobazaar-wordpress' ),	// Title
 		'sobazaar_board_meta_box',		// Callback function
 		'post',							// Admin page (or post type)
 		'side',							// Context
@@ -50,7 +58,7 @@ function sobazaar_board_meta_box( $object, $box ) { ?>
 	<?php wp_nonce_field( basename( __FILE__ ), 'sobazaar_board_nonce' ); ?>
 
 	<p>
-		<label for="sobazaar-board"><?php _e( "Find the board you want below, then click on 'Get shortcode'. ", 'example' ); ?></label>
+		<label for="sobazaar-board"><?php _e( "Find the board you want below, then click on 'Get shortcode'. ", 'sobazaar-wordpress' ); ?></label>
 		<br />
 		<iframe class="widefat sobazaar-admin-iframe" src="<?php echo SOBAZAAR_EMBED_SRV; ?>"></iframe>
 	</p>
