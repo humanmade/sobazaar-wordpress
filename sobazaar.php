@@ -84,7 +84,7 @@ function sobazaar_shortcode_function( $atts ) {
 	), $atts) );
 
 	if ( ! $board ) {
-		return 'Fail';
+		return false;
 	}
 	
 	else return '<div class="sobazaar-iframe-wrapper"><iframe class="widefat sobazaar-iframe" src="http://alice.sobazaar.com/#/board/58-' . $board . '"></iframe></div>';
