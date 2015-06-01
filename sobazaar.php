@@ -60,7 +60,7 @@ function sobazaar_board_meta_box( $object, $box ) { ?>
 	<p>
 		<label for="sobazaar-board"><?php _e( "Find the board you want below, then click on 'Get shortcode'. ", 'sobazaar-wordpress' ); ?></label>
 		<br />
-		<iframe class="widefat sobazaar-admin-iframe" src="<?php echo SOBAZAAR_EMBED_SRV; ?>"></iframe>
+		<iframe class="widefat sobazaar-admin-iframe" src="<?php echo esc_url( SOBAZAAR_EMBED_SRV ); ?>"></iframe>
 	</p>
 	
 <?php }
