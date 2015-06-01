@@ -10,7 +10,7 @@ Text Domain: sobazaar-wordpress
 */
 
 /* Some configuration */
-define('SOBAZAAR_EMBED_SRV', 'http://alice.sobazaar.com/'); // Test server - Do not use in production!
+define( 'SOBAZAAR_EMBED_SRV', 'http://alice.sobazaar.com/' ); // Test server - Do not use in production!
 
 // Load plugin textdomain.
 function sobazaar_load_textdomain() {
