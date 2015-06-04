@@ -10,7 +10,7 @@ Text Domain: sobazaar-wordpress
 */
 
 /* Some configuration */
-define( 'SOBAZAAR_EMBED_SRV', 'http://alice.sobazaar.com/' ); // Test server - Do not use in production!
+define( 'SOBAZAAR_EMBED_SRV', 'http://wp-boards.sobazaar.com/' );
 
 // Load plugin textdomain.
 function sobazaar_load_textdomain() {
@@ -87,7 +87,7 @@ function sobazaar_shortcode_function( $atts ) {
 		return false;
 	}
 	
-	else return '<div class="sobazaar-iframe-wrapper"><iframe class="widefat sobazaar-iframe" src="http://alice.sobazaar.com/#/board/58-' . esc_url( $board ) . '"></iframe></div>';
+	else return '<div class="sobazaar-iframe-wrapper"><iframe class="widefat sobazaar-iframe" src="' . esc_url( SOBAZAAR_EMBED_SRV ) . '#/board/58-' . esc_url( $board ) . '"></iframe></div>';
 	
 }
 
