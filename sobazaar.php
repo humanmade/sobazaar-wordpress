@@ -87,7 +87,7 @@ function sobazaar_shortcode_function( $atts ) {
 		return false;
 	}
 	
-	else return '<div class="sobazaar-iframe-wrapper"><iframe class="widefat sobazaar-iframe" src="' . esc_url( SOBAZAAR_EMBED_SRV ) . '#/board/58-' . esc_url( $board ) . '"></iframe></div>';
+	else return '<div class="sobazaar-iframe-wrapper"><iframe class="widefat sobazaar-iframe" src="' . esc_url( SOBAZAAR_EMBED_SRV . '#/board/58-' . $board ) . '"></iframe></div>';
 	
 }
 
